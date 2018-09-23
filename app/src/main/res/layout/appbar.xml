@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true" >
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_bottom"
+            android:overScrollMode="ifContentScrolls">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="100"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" android:layout_weight="25"
+                    android:src="@drawable/ic_dashboard_black_40dp_70" android:clickable="true"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" android:layout_weight="25"
+                    android:src="@drawable/ic_photo_camera_black_40dp_70" android:clickable="true"/>
+
+                <ImageView
+                    android:id="@+id/ivhome"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" android:layout_weight="25"
+                    android:src="@drawable/ic_home_black_40dp_70" android:clickable="true"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" android:layout_weight="25"
+                    android:src="@drawable/ic_add_circle_black_40dp_70" android:clickable="true"/>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+</LinearLayout>

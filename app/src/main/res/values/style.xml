@@ -1,0 +1,20 @@
+<resources>
+<style name="CellStyle">
+    <item name="android:layout_marginTop">@dimen/border_size</item>
+    <item name="android:layout_marginLeft">@dimen/border_size</item>
+    <item name="android:background">@android:color/white</item>
+    <item name="android:gravity">center</item>
+</style>
+
+<style name="CellSpacerStyle">
+<item name="android:layout_width">0dp</item>
+<item name="android:layout_height">0dp</item>
+<item name="android:layout_marginLeft">@dimen/border_size</item>
+<item name="android:background">@android:color/white</item>
+</style>
+
+ <color name="PrimaryBg">#757575</color>
+ <color name="Secondary">#9ccc65</color>
+ <color name="TextStyleHeader">#fff</color>
+ <color name="TextStyle1">#fafafa</color>
+</resources>

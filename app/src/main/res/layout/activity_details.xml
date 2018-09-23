@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Details" android:background="@color/PrimaryBg">
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:columnCount="2">
+
+        <TextView
+            android:text="Edit Bill Details"
+            android:gravity="center_horizontal"
+            android:layout_gravity="fill_horizontal|center_vertical"
+            android:layout_columnSpan="2"
+            android:layout_width="5dp"
+            android:textSize="24dp"
+            android:textColor="@color/TextStyleHeader"
+            />
+
+        <EditText
+            android:width="100dp"
+            android:layout_gravity="fill_horizontal|center_vertical"
+            android:hint="@string/EditBillContext"
+            android:textColor="@color/TextStyle1"
+            android:layout_width="5dp"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_edit_black_30dp"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_columnSpan="2"/>
+
+
+        <!--<DatePicker android:id="@+id/datepicker"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+
+        <!--&gt;</DatePicker>-->
+
+        <EditText
+            android:id="@+id/billdate"
+            android:width="100dp"
+            android:layout_gravity="fill_horizontal|center_vertical"
+            android:hint="@string/EditBillDate"
+            android:textColor="@color/TextStyle1"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_date_range_black_30dp"
+            android:padding="10dp"
+            android:onClick="dateSelect"
+            android:layout_width="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_columnSpan="2"/>
+
+
+        <Button
+            android:id="@+id/submit"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_gravity="bottom|right"
+            android:text="@string/EditBillNextButton"
+            android:textColor="@color/TextStyle1"
+            android:drawableLeft="@drawable/ic_save_black_24dp"
+            />
+
+    </GridLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <include layout="@layout/appbar"/>
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

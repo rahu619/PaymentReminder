@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Sat Sep 08 11:11:54 NZST 2018
+0.baseType=DIRECTORY
+0.base=Z\:\\Mobile_Application_Development_COMP7091802\\Assignments\\Assignment-2_new\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+0.set=DEX
+count=1

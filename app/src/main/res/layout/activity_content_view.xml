@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContentViewActivity">
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/text_margin"-->
+        <!--android:text="@string/large_text" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:text="Sun 02 Sep 10:44am"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3">
+            <!--android:background="@android:color/darker_gray"-->
+
+            <!--Header-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="7"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:padding="3dp"
+                android:background="@android:color/darker_gray"
+                android:text="Your bills"
+                android:textColor="@android:color/white"
+                style="@style/CellStyle" />
+
+
+            <!-- Spacer for green -->
+            <View
+                style="@style/CellSpacerStyle"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+
+            <!-- First Row  -->
+
+            <!-- Title cell -->
+            <TextView
+                style="@style/CellStyle"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_rowSpan="2"/>
+
+            <!-- mini cell -->
+            <TextView
+                style="@style/CellStyle"
+                android:layout_height="@dimen/row_height"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_rowSpan="1" />
+
+        </GridLayout>
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
