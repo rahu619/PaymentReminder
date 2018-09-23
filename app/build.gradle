@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+<<<<<<< HEAD
     buildToolsVersion '27.0.3'
 
     defaultConfig {
@@ -10,6 +11,15 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+=======
+    defaultConfig {
+        applicationId "com.example.rahul.testapp"
+        minSdkVersion 25
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+>>>>>>> f9b3a738e04a659ed1d0ae8a37fa72efd4537019
     }
     buildTypes {
         release {
@@ -25,6 +35,16 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+<<<<<<< HEAD
     implementation 'com.google.android.gms:play-services-vision:15.0.2'
 
 }
+=======
+    implementation 'com.google.firebase:firebase-database:11.8.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+apply plugin: 'com.google.gms.google-services'
+>>>>>>> f9b3a738e04a659ed1d0ae8a37fa72efd4537019

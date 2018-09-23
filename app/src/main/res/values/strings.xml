@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ok">OK</string>
@@ -108,4 +109,14 @@
     <string name="EditBillDate">Enter Bill Date</string>
     <string name="EditBillNextButton">SAVE</string>
 
+=======
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+>>>>>>> f9b3a738e04a659ed1d0ae8a37fa72efd4537019
 </resources>
