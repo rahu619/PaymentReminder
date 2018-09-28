@@ -5,6 +5,13 @@
 
     tools:context="com.google.android.gms.samples.vision.ocrreader.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/status_message"
+        android:layout_below="@+id/use_flash"
+        android:layout_marginTop="20dp" />
 
     <!--<TextView-->
     <!--android:layout_width="match_parent"-->

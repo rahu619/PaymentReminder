@@ -105,7 +105,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     Log.d(TAG, "Text read: " + text);
                 } else {
                     Log.e(TAG, "Value of ocr_failure:" + R.string.ocr_failure);
-                    statusMessage.setText(R.string.ocr_failure);
+                    statusMessage.setText("Value of ocr_failure:");
                     Log.d(TAG, "No Text captured, intent data is null");
                 }
             } else {

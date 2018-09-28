@@ -123,9 +123,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
                     public void onClick(View v){
                     Snackbar mSnackbar = Snackbar.make(mGraphicOverlay, "Capturing...", Snackbar.LENGTH_SHORT);
                     mSnackbar.show();
-
                     TakeWhole();
-
 
                 }
                 })
@@ -136,8 +134,11 @@ public final class OcrCaptureActivity extends AppCompatActivity {
 
     private void TakeWhole(){
         Toast.makeText(this, String.join(",", OcrDetectorProcessor.sContent), Toast.LENGTH_SHORT).show();
-
-
+        Intent resultIntent = new Intent();
+        // TODO Add extras or a data URI to this intent as appropriate.
+        resultIntent.putExtra(OcrCaptureActivity.TextBlockObject, String.join(",", OcrDetectorProcessor.sContent));
+        setResult(Activity.RESULT_OK, resultIntent);
+        finish();
     }
 
     /**
