@@ -134,7 +134,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
 
     private void TakeWhole(){
         Toast.makeText(this, String.join(",", OcrDetectorProcessor.sContent), Toast.LENGTH_SHORT).show();
-        Intent resultIntent = new Intent();
+        Intent resultIntent = new Intent(this,Details.class);
         // TODO Add extras or a data URI to this intent as appropriate.
         resultIntent.putExtra(OcrCaptureActivity.TextBlockObject, String.join(",", OcrDetectorProcessor.sContent));
         setResult(Activity.RESULT_OK, resultIntent);
@@ -359,7 +359,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         if (graphic != null) {
             text = graphic.getTextBlock();
             if (text != null && text.getValue() != null) {
-                Intent data = new Intent();
+                Intent data = new Intent(this,Details.class);
                 data.putExtra(TextBlockObject, text.getValue());
                 setResult(CommonStatusCodes.SUCCESS, data);
                 finish();

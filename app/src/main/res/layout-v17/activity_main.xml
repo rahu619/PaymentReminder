@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="com.google.android.gms.samples.vision.ocrreader.MainActivity">
 
     <TextView
@@ -61,19 +60,28 @@
         android:layout_height="wrap_content"
         android:text="@string/use_flash"
         android:id="@+id/use_flash"
-        android:layout_alignTop="@+id/toolbar"
+        android:layout_alignTop="@+id/toolbar_fragment"
         android:layout_alignRight="@id/auto_focus"
         android:layout_alignEnd="@+id/text_value"
         android:layout_marginBottom="77dp"
         android:checked="false" />
 
-    <RelativeLayout
-        android:id="@+id/toolbar"
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true">-->
+        <!--<include layout="@layout/appbar"/>-->
+
+    <!--</RelativeLayout>-->
+
+    <fragment
+        android:id="@+id/toolbar_fragment"
+        android:name="com.google.android.gms.samples.vision.ocrreader.ToolbarFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-        <include layout="@layout/appbar"/>
+        android:layout_alignParentBottom="true"/>
 
-    </RelativeLayout>
+
 
 </RelativeLayout>

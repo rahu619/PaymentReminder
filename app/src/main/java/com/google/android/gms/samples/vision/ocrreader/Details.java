@@ -2,6 +2,7 @@ package com.google.android.gms.samples.vision.ocrreader;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -10,10 +11,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class Details extends Activity implements DatePickerDialog.OnDateSetListener {
+public class Details extends Activity implements DatePickerDialog.OnDateSetListener,ToolbarFragment.OnFragmentInteractionListener {
     DatePickerDialog datePickerDialog;
     EditText _date;
-    ImageView ivHome;
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,16 +28,6 @@ public class Details extends Activity implements DatePickerDialog.OnDateSetListe
 
         _date=findViewById(R.id.billdate);
 
-        ivHome=findViewById(R.id.ivhome);
-        ivHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent _home=new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(_home);
-                finish();
-
-            }
-        });
     }
 
 

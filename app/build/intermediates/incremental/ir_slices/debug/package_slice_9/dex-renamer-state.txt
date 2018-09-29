@@ -1,4 +1,0 @@
-#Mon Sep 24 23:19:27 CEST 2018
-base.0=C\:\\Users\\GPow\\stash\\PaymentReminder\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
-path.0=classes.dex
-renamed.0=classes.dex
