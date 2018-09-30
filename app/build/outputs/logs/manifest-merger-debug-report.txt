@@ -110,12 +110,12 @@ ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:32:13-43
 	android:name
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:31:13-47
-activity#com.google.android.gms.samples.vision.ocrreader.Details
+activity#com.google.android.gms.samples.vision.ocrreader.DetailsActivity
 ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:33:9-41:20
 	android:label
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:35:13-59
 	android:name
-		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:34:13-36
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:34:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:36:13-40:29
 action#android.intent.action.MAIN

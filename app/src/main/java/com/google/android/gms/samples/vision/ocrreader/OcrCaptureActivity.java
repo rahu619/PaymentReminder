@@ -27,10 +27,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -51,7 +48,6 @@ import com.google.android.gms.samples.vision.ocrreader.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -134,7 +130,7 @@ public final class OcrCaptureActivity extends AppCompatActivity implements Toolb
 
     private void TakeWhole(){
         Toast.makeText(this, String.join(",", OcrDetectorProcessor.sContent), Toast.LENGTH_SHORT).show();
-        Intent resultIntent = new Intent(this,Details.class);
+        Intent resultIntent = new Intent(this,DetailsActivity.class);
         // TODO Add extras or a data URI to this intent as appropriate.
         resultIntent.putExtra(OcrCaptureActivity.TextBlockObject, String.join(",", OcrDetectorProcessor.sContent));
         setResult(Activity.RESULT_OK, resultIntent);
@@ -359,7 +355,7 @@ public final class OcrCaptureActivity extends AppCompatActivity implements Toolb
         if (graphic != null) {
             text = graphic.getTextBlock();
             if (text != null && text.getValue() != null) {
-                Intent data = new Intent(this,Details.class);
+                Intent data = new Intent(this,DetailsActivity.class);
                 data.putExtra(TextBlockObject, text.getValue());
                 setResult(CommonStatusCodes.SUCCESS, data);
                 finish();

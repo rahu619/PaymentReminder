@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 //import android.support.v4.app.Fragment;
-import android.widget.Toast;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -94,7 +94,7 @@ public class ToolbarFragment extends Fragment implements View.OnClickListener{
                 break;
             }
             case R.id.ivadd:{
-                Intent _home=new Intent(getActivity(),Details.class);
+                Intent _home=new Intent(getActivity(),DetailsActivity.class);
                 startActivity(_home);
                 break;
             }

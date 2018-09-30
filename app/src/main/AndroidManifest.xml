@@ -31,7 +31,7 @@
             android:name=".OcrCaptureActivity"
             android:label="Scan your bill" />
         <activity
-            android:name=".Details"
+            android:name=".DetailsActivity"
             android:label="@string/title_activity_details">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

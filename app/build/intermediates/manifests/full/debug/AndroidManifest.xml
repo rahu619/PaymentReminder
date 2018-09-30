@@ -39,7 +39,7 @@
             android:name="com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity"
             android:label="Scan your bill" />
         <activity
-            android:name="com.google.android.gms.samples.vision.ocrreader.Details"
+            android:name="com.google.android.gms.samples.vision.ocrreader.DetailsActivity"
             android:label="@string/title_activity_details" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
