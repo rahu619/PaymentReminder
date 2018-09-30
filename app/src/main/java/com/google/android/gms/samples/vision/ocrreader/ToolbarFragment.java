@@ -88,6 +88,7 @@ public class ToolbarFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
             case R.id.ivcam:{
                 Intent _cam=new Intent(getActivity(),MainActivity.class);
                 startActivity(_cam);

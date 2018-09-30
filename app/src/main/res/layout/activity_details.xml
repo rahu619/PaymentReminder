@@ -55,7 +55,24 @@
 
     <LinearLayout android:id="@+id/layout4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:orientation="horizontal" android:layout_below="@+id/layout3">
+        android:layout_height="wrap_content" android:orientation="horizontal" android:layout_below="@id/layout3">
+
+        <EditText
+            android:id="@+id/billtime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_date_range_black_30dp"
+            android:hint="Enter Time"
+            android:onClick="timeSelect"
+            android:paddingTop="15dp"
+            android:textColor="@color/TextStyle1" />
+    </LinearLayout>
+
+
+    <LinearLayout android:id="@+id/layout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal" android:layout_below="@+id/layout4">
 
         <EditText
             android:id="@+id/billamount"
@@ -75,7 +92,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="30dp" android:layout_below="@+id/layout4">
+        android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="30dp" android:layout_below="@+id/layout5">
 
         <Button
             android:id="@+id/submit"
