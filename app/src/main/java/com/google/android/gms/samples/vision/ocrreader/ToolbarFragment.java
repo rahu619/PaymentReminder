@@ -88,14 +88,19 @@ public class ToolbarFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.ivhome:{
+                Intent _home=new Intent(getActivity(),HomeActivity.class);
+                startActivity(_home);
+                break;
+            }
             case R.id.ivcam:{
                 Intent _cam=new Intent(getActivity(),MainActivity.class);
                 startActivity(_cam);
                 break;
             }
             case R.id.ivadd:{
-                Intent _home=new Intent(getActivity(),DetailsActivity.class);
-                startActivity(_home);
+                Intent _details=new Intent(getActivity(),DetailsActivity.class);
+                startActivity(_details);
                 break;
             }
 

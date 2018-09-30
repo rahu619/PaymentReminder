@@ -51,6 +51,9 @@
             android:name="com.google.android.gms.samples.vision.ocrreader.ContentViewActivity"
             android:label="@string/title_activity_content_view" />
         <activity
+            android:name="com.google.android.gms.samples.vision.ocrreader.HomeActivity"
+            android:label="@string/title_activity_home" />
+        <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
