@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -27,7 +28,7 @@ public class Details extends Activity implements DatePickerDialog.OnDateSetListe
         datePickerDialog =new DatePickerDialog(this,Details.this,2018,1,1);
 
         _date=findViewById(R.id.billdate);
-
+        _date.setInputType(InputType.TYPE_NULL); //for preventing the soft keyboard from getting launched
     }
 
 

@@ -59,7 +59,7 @@ import java.io.IOException;
  * rear facing camera. During detection overlay graphics are drawn to indicate the position,
  * size, and contents of each TextBlock.
  */
-public final class OcrCaptureActivity extends AppCompatActivity {
+public final class OcrCaptureActivity extends AppCompatActivity implements ToolbarFragment.OnFragmentInteractionListener {
     private static final String TAG = "OcrCaptureActivity";
     public static int count = 0;
     // Intent request code to handle updating play services if needed.
@@ -372,6 +372,11 @@ public final class OcrCaptureActivity extends AppCompatActivity {
             Log.d(TAG,"no text detected");
         }
         return text != null;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     private class CaptureGestureListener extends GestureDetector.SimpleOnGestureListener {

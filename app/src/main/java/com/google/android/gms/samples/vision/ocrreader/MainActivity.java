@@ -17,6 +17,7 @@
 package com.google.android.gms.samples.vision.ocrreader;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -30,7 +31,7 @@ import com.google.android.gms.common.api.CommonStatusCodes;
  * Main activity demonstrating how to pass extra parameters to an activity that
  * recognizes text.
  */
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener,ToolbarFragment.OnFragmentInteractionListener {
 
     // Use a compound button so either checkbox or switch widgets work.
     private CompoundButton autoFocus;
@@ -116,5 +117,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else {
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

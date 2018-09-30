@@ -34,6 +34,7 @@ public class ToolbarFragment extends Fragment implements View.OnClickListener{
 
     private ImageView ivHome;
     private ImageView ivCam;
+    private ImageView ivAdd;
     public ToolbarFragment() {
         // Required empty public constructor
     }
@@ -75,15 +76,11 @@ public class ToolbarFragment extends Fragment implements View.OnClickListener{
 
         ivHome=(ImageView) myLayout.findViewById(R.id.ivhome);
         ivCam=(ImageView)myLayout.findViewById(R.id.ivcam);
+        ivAdd=(ImageView)myLayout.findViewById(R.id.ivadd);
 
         ivHome.setOnClickListener(this);
-//        ivHome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getContext(),"Test",Toast.LENGTH_SHORT);
-//            }
-//        });
         ivCam.setOnClickListener(this);
+        ivAdd.setOnClickListener(this);
         // Inflate the layout for this fragment]
         return myLayout;
     }
@@ -92,15 +89,17 @@ public class ToolbarFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ivcam:{
-                Intent _home=new Intent(getContext(),MainActivity.class);
+                Intent _cam=new Intent(getActivity(),MainActivity.class);
+                startActivity(_cam);
+                break;
+            }
+            case R.id.ivadd:{
+                Intent _home=new Intent(getActivity(),Details.class);
                 startActivity(_home);
                 break;
             }
-            case R.id.ivhome:{
-                Intent _home=new Intent(getContext(),Details.class);
-                startActivity(_home);
-                break;
-            }
+
+
         }
     }
 
