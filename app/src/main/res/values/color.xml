@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="item1" type="color">#86b300</item>
+    <item name="item2" type="color">#ace600</item>
+    <item name="item3" type="color">#cccc00</item>
+    <item name="item4" type="color">#ffff1a</item>
+    <item name="item5" type="color">#ff9999</item>
+    <item name="item6" type="color">#ffe699</item>
+    <item name="item7" type="color">#00b386</item>
+    <item name="item8" type="color">#cc8800</item>
+    <item name="item9" type="color">#99ccff</item>
+    <item name="item10" type="color">#b3ffb3</item>
+    <item name="item11" type="color">#f2f2f2</item>
+    <item name="item12" type="color">#70dbdb</item>
+    <item name="item13" type="color">#bfbfbf</item>
+    <item name="item14" type="color">#00ffbf</item>
+    <item name="item15" type="color">#cc9900</item>
+    <item name="item16" type="color">#ffc61a</item>
+    <item name="item17" type="color">#bbff33</item>
+    <item name="item18" type="color">#ccff66</item>
+    <item name="item19" type="color">#77b300</item>
+    <item name="item20" type="color">#669900</item>
+
+    <integer-array name="tablecolors">
+        <item>@color/item1</item>
+        <item>@color/item2</item>
+        <item>@color/item3</item>
+        <item>@color/item4</item>
+        <item>@color/item5</item>
+        <item>@color/item6</item>
+        <item>@color/item7</item>
+        <item>@color/item8</item>
+        <item>@color/item9</item>
+        <item>@color/item10</item>
+        <item>@color/item11</item>
+        <item>@color/item12</item>
+        <item>@color/item13</item>
+        <item>@color/item14</item>
+        <item>@color/item15</item>
+        <item>@color/item16</item>
+        <item>@color/item17</item>
+        <item>@color/item18</item>
+        <item>@color/item19</item>
+        <item>@color/item20</item>
+    </integer-array>
+
+</resources>

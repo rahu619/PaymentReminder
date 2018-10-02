@@ -5,4 +5,6 @@
     <dimen name="text_margin">5dp</dimen>
     <dimen name="border_size">1px</dimen>
     <dimen name="row_height">10dp</dimen>
+    <dimen name="bill_info_text_size">1dp</dimen>
+    <dimen name="bill_info_padding">1dp</dimen>
 </resources>

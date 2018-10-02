@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dip"
+        android:scrollbars="vertical"
+        android:layout_height="530dp">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/billsTable"
+            android:layout_marginBottom="40dp"
+            >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="70px"
+                android:orientation="vertical">
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <fragment
+        android:id="@+id/toolbar_fragment"
+        android:name="com.google.android.gms.samples.vision.ocrreader.ToolbarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

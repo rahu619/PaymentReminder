@@ -33,15 +33,27 @@
         <activity
             android:name=".DetailsActivity"
             android:label="@string/title_activity_details">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ContentViewActivity"
             android:label="@string/title_activity_content_view" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <receiver android:name="Notification.AlarmBroadcastReceiver">
+            <intent-filter>
+                <action android:name="me.proft.alarms.ACTION_ALARM" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
