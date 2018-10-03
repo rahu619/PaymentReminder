@@ -40,19 +40,13 @@
             android:label="Scan your bill" />
         <activity
             android:name="com.google.android.gms.samples.vision.ocrreader.DetailsActivity"
-            android:label="@string/title_activity_details" >
-        </activity>
+            android:label="@string/title_activity_details" />
         <activity
             android:name="com.google.android.gms.samples.vision.ocrreader.ContentViewActivity"
             android:label="@string/title_activity_content_view" />
         <activity
             android:name="com.google.android.gms.samples.vision.ocrreader.HomeActivity"
             android:label="@string/title_activity_home" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <receiver android:name="Notification.AlarmBroadcastReceiver" >
@@ -61,6 +55,13 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name="com.google.android.gms.samples.vision.ocrreader.TabActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\575d415942d92c7a963f513ac8ee9fbd\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\7dc48d5d9fd66728f96c1223f4f3a678\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-vision:15.0.2] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.2.aar\d7c9013da4a6bc8c075b54ca892aedb4\AndroidManifest.xml:2:1-9:12
@@ -29,20 +29,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\GPow\.gradle\c
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\0ea71c5a406561186672ea0223c15e60\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\77a2ab8cf1bf5f117dc3af7d445eef9f\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b62dc61536e41bee09a07e7cf345191a\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:3:5-62
 		INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
 		INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:1-58:12
 		INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:2:11-69
@@ -61,7 +61,7 @@ ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:9:5-8
 	android:name
 		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:9:22-78
 application
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:11:5-57:19
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:11:5-56:19
 MERGED from [com.google.android.gms:play-services-vision:15.0.2] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.2.aar\d7c9013da4a6bc8c075b54ca892aedb4\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision:15.0.2] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.2.aar\d7c9013da4a6bc8c075b54ca892aedb4\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision-common:15.0.2] C:\Users\GPow\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-15.0.2.aar\64277a24d6c36bfbab00041d8d405480\AndroidManifest.xml:7:5-20
@@ -111,43 +111,47 @@ ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:30:9-
 	android:name
 		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:31:13-47
 activity#com.google.android.gms.samples.vision.ocrreader.DetailsActivity
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:33:9-37:20
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:33:9-35:71
 	android:label
 		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:35:13-59
 	android:name
 		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:34:13-44
 activity#com.google.android.gms.samples.vision.ocrreader.ContentViewActivity
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:38:9-40:67
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:36:9-38:67
 	android:label
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:40:13-64
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:38:13-64
 	android:name
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:39:13-48
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:37:13-48
 activity#com.google.android.gms.samples.vision.ocrreader.HomeActivity
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:41:9-49:20
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:39:9-42:20
 	android:label
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:43:13-56
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:41:13-56
 	android:name
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:42:13-41
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:44:13-47:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:45:17-69
-	android:name
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:45:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:46:17-77
-	android:name
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:46:27-74
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:40:13-41
 receiver#Notification.AlarmBroadcastReceiver
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:51:9-55:20
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:44:9-48:20
 	android:name
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:51:19-69
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:44:19-69
 intent-filter#action:name:me.proft.alarms.ACTION_ALARM
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:52:13-54:29
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:45:13-47:29
 action#me.proft.alarms.ACTION_ALARM
-ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:53:17-71
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:46:17-71
 	android:name
-		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:53:25-68
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:46:25-68
+activity#com.google.android.gms.samples.vision.ocrreader.TabActivity
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:50:9-55:20
+	android:name
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:50:19-46
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:51:13-54:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:52:17-69
+	android:name
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:52:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:53:17-77
+	android:name
+		ADDED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml:53:27-74
 uses-sdk
 INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\GPow\stash\PaymentRem\app\src\main\AndroidManifest.xml

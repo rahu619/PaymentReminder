@@ -48,7 +48,6 @@
             android:drawablePadding="5dp"
             android:drawableStart="@drawable/ic_date_range_black_30dp"
             android:hint="@string/EditBillDate"
-            android:onClick="dateSelect"
             android:paddingTop="15dp"
             android:textColor="@color/TextStyle1" />
     </LinearLayout>
@@ -101,7 +100,6 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_save_black_24dp"
             android:text="SAVE"
-            android:onClick="SaveDetails"
             android:textColor="#6B6D6E"
             android:textSize="25sp" />
     </LinearLayout>
@@ -112,12 +110,12 @@
     <!--<include layout="@layout/appbar"/>-->
 
     <!--</RelativeLayout>-->
-    <fragment
-        android:id="@+id/toolbar_fragment"
-        android:name="com.google.android.gms.samples.vision.ocrreader.ToolbarFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+    <!--<fragment-->
+        <!--android:id="@+id/toolbar_fragment"-->
+        <!--android:name="com.google.android.gms.samples.vision.ocrreader.ToolbarFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true" />-->
 
 
 </RelativeLayout>

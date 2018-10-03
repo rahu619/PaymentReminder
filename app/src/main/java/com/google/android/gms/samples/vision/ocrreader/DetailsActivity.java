@@ -9,9 +9,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -28,48 +34,72 @@ import Db.IReminder;
 import Db.Reminder;
 import Notification.AlarmBroadcastReceiver;
 
-public class DetailsActivity extends Activity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener,ToolbarFragment.OnFragmentInteractionListener {
+public class DetailsActivity extends Fragment implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener, View.OnClickListener {
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
     EditText _date,_billamount,_billcontent;
+    Button _submit;
     String date_time;
     int mHour;
     int mMinute;
     DbHandler db;
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
 
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//
+//         initialize();
+//        _date.setInputType(InputType.TYPE_NULL); //for preventing the soft keyboard from getting launched
+//
+//         db = new DbHandler(this, null);
+//
+//    }
+
+    public DetailsActivity() {
+        // Required empty public constructor
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        super.onCreate(savedInstanceState);
         Calendar c = Calendar.getInstance();
         int mYear = c.get(Calendar.YEAR);
         int mMonth = c.get(Calendar.MONTH);
         int mDay = c.get(Calendar.DAY_OF_MONTH);
 
-        setContentView(R.layout.activity_details);
-        datePickerDialog =new DatePickerDialog(this,DetailsActivity.this,mYear,mMonth,mDay);
-        timePickerDialog= new TimePickerDialog(getApplicationContext(), this, 1, 0, false);
+        datePickerDialog =new DatePickerDialog(getContext(),DetailsActivity.this,mYear,mMonth,mDay);
+        timePickerDialog= new TimePickerDialog(getContext().getApplicationContext(), this, 1, 0, false);
 
-         initialize();
-        _date.setInputType(InputType.TYPE_NULL); //for preventing the soft keyboard from getting launched
-
-         db = new DbHandler(this, null);
-
+        View rootView = inflater.inflate(R.layout.activity_details, container, false);
+        return rootView;
     }
 
-   private void initialize(){
-       _date=findViewById(R.id.billdate);
-       _billamount=findViewById(R.id.billamount);
-       _billcontent=findViewById(R.id.billcontent);
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initialize();
+        setOnClickListeners();
+        _date.setInputType(InputType.TYPE_NULL); //for preventing the soft keyboard from getting launched
 
-   }
+        db = new DbHandler(getContext(), null);
+    }
 
-   private View.OnClickListener _commonClick= new View.OnClickListener() {
+    private void initialize(){
+        _date = getView().findViewById(R.id.billdate);
+        _billamount = getView().findViewById(R.id.billamount);
+        _billcontent = getView().findViewById(R.id.billcontent);
+        _submit = getView().findViewById(R.id.submit);
+    }
+
+    private void setOnClickListeners() {
+        _submit.setOnClickListener(this);
+        _date.setOnClickListener(this);
+    }
+
+    private View.OnClickListener _commonClick= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             hide();
@@ -98,9 +128,8 @@ public class DetailsActivity extends Activity implements DatePickerDialog.OnDate
     }
 
     private void hide(){
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        this.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
-
 
     private void timePicker(){
         // Get Current Time
@@ -109,7 +138,7 @@ public class DetailsActivity extends Activity implements DatePickerDialog.OnDate
         mMinute = c.get(Calendar.MINUTE);
 
         // Launch Time Picker Dialog
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+        TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(),
                 new TimePickerDialog.OnTimeSetListener() {
 
                     @Override
@@ -138,7 +167,7 @@ public class DetailsActivity extends Activity implements DatePickerDialog.OnDate
 
             LocalDateTime _billdate=LocalDateTime.parse(_date.getText().toString(),formatter);
             BillContent _content=new BillContent(0, _billdate,null,_billcontent.getText().toString(), Integer.valueOf(_billamount.getText().toString()),0);
-            IReminder _reminder= new Reminder(getApplicationContext(),_content);
+            IReminder _reminder= new Reminder(getContext().getApplicationContext(),_content);
 
 
             if(_reminder.AddReminder()){
@@ -157,21 +186,27 @@ public class DetailsActivity extends Activity implements DatePickerDialog.OnDate
         else
             _msg="Left out any field?";
 
-            Toast.makeText(this,_msg,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),_msg,Toast.LENGTH_SHORT).show();
     }
-
 
     public void setAlarm(long time) {
 
-        Intent intentToFire = new Intent(getApplicationContext(), AlarmBroadcastReceiver.class);
+        Intent intentToFire = new Intent(getContext().getApplicationContext(), AlarmBroadcastReceiver.class);
         intentToFire.setAction(AlarmBroadcastReceiver.ACTION_ALARM);
 
-        PendingIntent alarmIntent = PendingIntent.getBroadcast(getApplicationContext(),0, intentToFire, 0);
-        AlarmManager alarmManager = (AlarmManager)getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+        PendingIntent alarmIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(),0, intentToFire, 0);
+        AlarmManager alarmManager = (AlarmManager)getContext().getApplicationContext().getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, time, alarmIntent);
     }
 
-
-
-
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.submit:
+                SaveDetails(v);
+                break;
+            case R.id.billdate:
+                dateSelect(v);
+        }
+    }
 }
