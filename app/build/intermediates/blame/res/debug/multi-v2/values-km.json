@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "Z:\\Mobile_Application_Development_COMP7091802\\Assignments\\Assignment-2_new\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
+            "outputFile": "C:\\Users\\GPow\\stash\\PaymentRem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Rahul\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\c670947113ddcaba9efb520a9570de05\\res\\values-km\\values-km.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4642",
-                        "endColumns": "100",
-                        "endOffsets": "4738"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Rahul\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3f97c4745626ab359c3307fd0642cae5\\res\\values-km\\values-km.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,308,420,507,611,729,806,883,966,1070,1175,1275,1385,1492,1600,1762,1860",
-                        "endColumns": "102,99,111,86,103,117,76,76,82,103,104,99,109,106,107,161,97,82",
-                        "endOffsets": "203,303,415,502,606,724,801,878,961,1065,1170,1270,1380,1487,1595,1757,1855,1938"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,308,420,507,611,729,806,883,966,1070,1175,1275,1385,1492,1600,1762,4559",
-                        "endColumns": "102,99,111,86,103,117,76,76,82,103,104,99,109,106,107,161,97,82",
-                        "endOffsets": "203,303,415,502,606,724,801,878,961,1065,1170,1270,1380,1487,1595,1757,1855,4637"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Rahul\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\e041cd56b840d61d301ef9c7ffc31039\\res\\values-km\\values.xml",
+                    "source": "C:\\Users\\GPow\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\8f9088df87b69dbd1cbdbd57dbd12af2\\res\\values-km\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Rahul\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\5167ab620a0d01d956ca2e6d6bb83f6f\\res\\values-km\\values.xml",
+                    "source": "C:\\Users\\GPow\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\b8fbeef7aea5577acd6eb1928e94d85f\\res\\values-km\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -69,6 +35,40 @@
                         "startOffsets": "3017",
                         "endColumns": "207",
                         "endOffsets": "3220"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\GPow\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7dc48d5d9fd66728f96c1223f4f3a678\\res\\values-km\\values-km.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,208,308,420,507,611,729,806,883,966,1070,1175,1275,1385,1492,1600,1762,1860",
+                        "endColumns": "102,99,111,86,103,117,76,76,82,103,104,99,109,106,107,161,97,82",
+                        "endOffsets": "203,303,415,502,606,724,801,878,961,1065,1170,1270,1380,1487,1595,1757,1855,1938"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,208,308,420,507,611,729,806,883,966,1070,1175,1275,1385,1492,1600,1762,4559",
+                        "endColumns": "102,99,111,86,103,117,76,76,82,103,104,99,109,106,107,161,97,82",
+                        "endOffsets": "203,303,415,502,606,724,801,878,961,1065,1170,1270,1380,1487,1595,1757,1855,4637"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\GPow\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\d7b26ddcca4f932fb6f151c159466280\\res\\values-km\\values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4642",
+                        "endColumns": "100",
+                        "endOffsets": "4738"
                     }
                 }
             ]
