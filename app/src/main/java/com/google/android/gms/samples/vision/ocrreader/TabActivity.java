@@ -14,6 +14,11 @@ public class TabActivity extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
 
+    private int[] tabIcons = {
+            R.drawable.ic_attach_money_black_30_24dp,
+            R.drawable.ic_home_black_40dp_70,
+            R.drawable.ic_photo_camera_black_40dp_70
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,14 +26,19 @@ public class TabActivity extends AppCompatActivity {
 
         // Create a new fragment
         Fragment fragmentOne = new Fragment();
-
         this.tabLayout = findViewById(R.id.tabLayout);
         this.viewPager = findViewById(R.id.viewPager);
-
         viewPagerAdapter = new ViewPagerAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
+        setupTabIcons();
+    }
+
+    private void setupTabIcons() {
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
     }
 
     /**
