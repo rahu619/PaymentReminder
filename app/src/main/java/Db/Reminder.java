@@ -4,6 +4,7 @@ import android.content.Context;
 import android.telecom.Call;
 
 import com.google.android.gms.samples.vision.ocrreader.DetailsActivity;
+import com.google.android.gms.samples.vision.ocrreader.SingleSeries;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,6 +32,10 @@ public class Reminder implements IReminder {
         return _DB.getReminders();
     }
 
+
+    public List<SingleSeries> GetReport(){
+        return _DB.getReport();
+    }
 
 
     //

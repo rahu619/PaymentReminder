@@ -10,11 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" android:paddingTop="250dp" android:orientation="vertical">
 
-        <!--Paid-->
-    <LinearLayout
+      <LinearLayout
+        android:id="@+id/pielayout"
         android:clipToPadding="false"
         android:gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.github.mikephil.charting.charts.PieChart android:id="@+id/pcCompare"
+            android:layout_width="match_parent" android:minHeight="80dp" android:minWidth="360dp"
+            android:layout_height="match_parent" android:orientation="horizontal" >
+
+        </com.github.mikephil.charting.charts.PieChart>
+       </LinearLayout>
+
+        <!--Paid-->
+          <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:layout_below="@id/pielayout"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

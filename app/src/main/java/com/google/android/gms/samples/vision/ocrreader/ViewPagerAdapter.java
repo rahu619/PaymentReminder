@@ -18,9 +18,15 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if (position == 0) {
             return new HomeActivity();
-        } else if (position == 1){
+        }
+//        else if (position == 1){
+//            return new ReportActivity();
+//        }
+        else if(position == 1)
+        {
             return new DetailsActivity();
-        } else {
+        }
+        else {
             return new MainActivity();
         }
     }

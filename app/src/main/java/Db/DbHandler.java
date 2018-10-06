@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.google.android.gms.samples.vision.ocrreader.SingleSeries;
+
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -64,11 +66,42 @@ public class DbHandler extends SQLiteOpenHelper {
 
     public List<BillContent> getReminders(){
 
-        List<BillContent> _returnList=new ArrayList<>();
+        String query = String.format("SELECT * FROM %s ",TABLE_REMINDER);
+        return executeQuery(query);
+
+    }
+
+
+    public List<SingleSeries> getReport(){
+        List<SingleSeries> _singleSeries=new ArrayList<>();
+
+        String query="";
+        query += "SELECT ID, count(*) as Total,";
+        query +="sum(case when BILL_IS_DISMISSED=0 then 1 else 0 end) DueCount,";
+        query +="sum(case when BILL_IS_DISMISSED=1 then 1 else 0 end) PaidCount";
+        query +=" FROM %s GROUP BY ID";
 
         SQLiteDatabase db = getWritableDatabase();
-        String query = String.format("SELECT * FROM %s ",TABLE_REMINDER);
+        Cursor c = db.rawQuery(String.format(query,TABLE_REMINDER), null);
+        c.moveToFirst();
 
+        while (!c.isAfterLast()) {
+            int total=c.getInt(c.getColumnIndex("Total"));
+            int dueCount=c.getInt(c.getColumnIndex("DueCount"));
+            int paidCount=c.getInt(c.getColumnIndex("PaidCount"));
+
+            _singleSeries.add(new SingleSeries("Total",total));
+            _singleSeries.add(new SingleSeries("Paid",paidCount));
+            _singleSeries.add(new SingleSeries("Due",dueCount));
+        }
+
+        return _singleSeries;
+    }
+
+
+    private List<BillContent> executeQuery(String query){
+        List<BillContent> _returnList=new ArrayList<>();
+        SQLiteDatabase db = getWritableDatabase();
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
 
@@ -91,8 +124,8 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         db.close();
         return _returnList;
-    }
 
+    }
 
 
 }

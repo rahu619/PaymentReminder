@@ -19,6 +19,7 @@ public class TabActivity extends AppCompatActivity {
 
     private int[] tabIcons = {
             R.drawable.ic_home_black_40dp_70,
+            //R.drawable.ic_details_black_24dp,
             R.drawable.ic_add_circle_black_40dp_70,
             R.drawable.ic_photo_camera_black_40dp_70
     };
