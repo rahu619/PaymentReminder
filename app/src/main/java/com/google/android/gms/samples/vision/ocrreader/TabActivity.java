@@ -1,12 +1,15 @@
 package com.google.android.gms.samples.vision.ocrreader;
 
 import android.app.Fragment;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 public class TabActivity extends AppCompatActivity {
 
@@ -14,6 +17,11 @@ public class TabActivity extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
 
+    private int[] tabIcons = {
+            R.drawable.ic_home_black_40dp_70,
+            R.drawable.ic_add_circle_black_40dp_70,
+            R.drawable.ic_photo_camera_black_40dp_70
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,15 +29,44 @@ public class TabActivity extends AppCompatActivity {
 
         // Create a new fragment
         Fragment fragmentOne = new Fragment();
-
         this.tabLayout = findViewById(R.id.tabLayout);
         this.viewPager = findViewById(R.id.viewPager);
-
         viewPagerAdapter = new ViewPagerAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
+        setupTabIcons();
     }
+
+    private void setupTabIcons() {
+
+        for(int i = 0;i < 3;i++){
+            ImageView imageView = new ImageView(this);
+            imageView.setImageResource(tabIcons[i]);
+            tabLayout.getTabAt(i).setCustomView(imageView);
+        }
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+    }
+
+
 
     /**
      * This interface must be implemented by activities that contain this
