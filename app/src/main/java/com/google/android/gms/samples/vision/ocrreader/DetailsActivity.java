@@ -17,9 +17,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -37,7 +42,8 @@ import Notification.AlarmBroadcastReceiver;
 public class DetailsActivity extends Fragment implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener, View.OnClickListener {
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
-    EditText _date,_billamount,_billcontent;
+    EditText _date,_billamount,_billcontent, _billTitle;
+    ImageView _imgcategory;
     Button _submit;
     String date_time;
     int mHour;
@@ -89,9 +95,44 @@ public class DetailsActivity extends Fragment implements DatePickerDialog.OnDate
 
     private void initialize(){
         _date = getView().findViewById(R.id.billdate);
+        _billTitle = getView().findViewById(R.id.billtitle);
         _billamount = getView().findViewById(R.id.billamount);
         _billcontent = getView().findViewById(R.id.billcontent);
         _submit = getView().findViewById(R.id.submit);
+        _imgcategory=getView().findViewById(R.id.imgcategory);
+
+        final String[] data= {"Electricity","Shopping","Car","Rent"};
+        final Spinner spinner = (Spinner) getView().findViewById(R.id.spinnerCategory);
+        spinner.setPrompt("Category");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,data);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                _billTitle.setText(data[position]);
+
+                switch(position){
+                    case 0:_imgcategory.setBackgroundResource(R.drawable.category_bulb);break;
+                    case 1:_imgcategory.setBackgroundResource(R.drawable.category_cart);break;
+                    case 2:_imgcategory.setBackgroundResource(R.drawable.category_car);break;
+                    case 3:_imgcategory.setBackgroundResource(R.drawable.category_rent);break;
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinner.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+        _billTitle.setText("");
+
     }
 
     private void setOnClickListeners() {

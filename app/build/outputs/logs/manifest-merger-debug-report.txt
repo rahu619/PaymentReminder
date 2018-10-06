@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1ee3328442ea86ab04b02acb03b97923\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3f97c4745626ab359c3307fd0642cae5\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-vision:15.0.2] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.2.aar\f071a24672cc4f83225d2582a5d6a447\AndroidManifest.xml:2:1-9:12
@@ -30,20 +30,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Rahul\.gradle\
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\cd0cb6ccb3a9bf0a185d314cb179fe6e\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d9cba8eb237537a2d17dc99f507afc58\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\4afcadcb725aafdd93197e6b0df6849c\AndroidManifest.xml:17:1-22:12
-INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
 	package
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:3:5-62
 		INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml
 		INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml
-		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
 		INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml
-		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:1-62:12
 		INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:2:11-69
@@ -62,7 +62,7 @@ ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-
 	android:name
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:9:22-78
 application
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:11:5-57:19
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:11:5-60:19
 MERGED from [com.google.android.gms:play-services-vision:15.0.2] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.2.aar\f071a24672cc4f83225d2582a5d6a447\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision:15.0.2] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.2.aar\f071a24672cc4f83225d2582a5d6a447\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision-common:15.0.2] C:\Users\Rahul\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-15.0.2.aar\a116230d1dce4a9fd19ce0dae2a82649\AndroidManifest.xml:7:5-20
@@ -112,7 +112,7 @@ ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-
 	android:name
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:31:13-47
 activity#com.google.android.gms.samples.vision.ocrreader.DetailsActivity
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:33:9-35:71
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:33:9-35:62
 	android:label
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:35:13-59
 	android:name
@@ -124,35 +124,41 @@ ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-
 	android:name
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:37:13-48
 activity#com.google.android.gms.samples.vision.ocrreader.HomeActivity
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:39:9-43:20
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:39:9-44:20
 	android:label
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:41:13-56
+	android:windowSoftInputMode
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:42:13-54
 	android:name
 		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:40:13-41
 receiver#Notification.AlarmBroadcastReceiver
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:45:9-49:20
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:46:9-50:20
 	android:name
-		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:45:19-69
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:46:19-69
 intent-filter#action:name:me.proft.alarms.ACTION_ALARM
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:46:13-48:29
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:47:13-49:29
 action#me.proft.alarms.ACTION_ALARM
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:47:17-71
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:48:17-71
 	android:name
-		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:47:25-68
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:48:25-68
 activity#com.google.android.gms.samples.vision.ocrreader.TabActivity
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:51:9-56:20
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:52:9-58:20
 	android:name
-		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:51:19-46
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:52:19-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:52:13-55:29
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:53:13-57:29
 action#android.intent.action.MAIN
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:53:17-69
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:54:17-69
 	android:name
-		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:53:25-66
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:54:25-66
 category#android.intent.category.LAUNCHER
-ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:54:17-77
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:56:17-77
 	android:name
-		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:54:27-74
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:56:27-74
+activity#com.google.android.gms.samples.vision.ocrreader.ReportActivity
+ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:59:9-61
+	android:name
+		ADDED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml:59:19-49
 uses-sdk
 INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from Z:\Mobile_Application_Development_COMP7091802\Assignments\Assignment-2_new\app\src\main\AndroidManifest.xml

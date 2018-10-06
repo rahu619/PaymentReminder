@@ -46,7 +46,8 @@
             android:label="@string/title_activity_content_view" />
         <activity
             android:name="com.google.android.gms.samples.vision.ocrreader.HomeActivity"
-            android:label="@string/title_activity_home" >
+            android:label="@string/title_activity_home"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
 
         <receiver android:name="Notification.AlarmBroadcastReceiver" >
@@ -62,6 +63,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.google.android.gms.samples.vision.ocrreader.ReportActivity" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

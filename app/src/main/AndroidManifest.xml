@@ -32,13 +32,14 @@
             android:label="Scan your bill" />
         <activity
             android:name=".DetailsActivity"
-            android:label="@string/title_activity_details"></activity>
+            android:label="@string/title_activity_details" />
         <activity
             android:name=".ContentViewActivity"
             android:label="@string/title_activity_content_view" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home">
+            android:label="@string/title_activity_home"
+            android:windowSoftInputMode="stateHidden">
 
         </activity>
 
@@ -51,9 +52,11 @@
         <activity android:name=".TabActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ReportActivity"></activity>
     </application>
 
 </manifest>

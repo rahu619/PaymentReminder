@@ -33,15 +33,16 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
-        switch (position) {
-            case 0:
-                return context.getString(R.string.tab_home);
-            case 1:
-                return context.getString(R.string.tab_details);
-            case 2:
-                return context.getString(R.string.tab_camera);
-            default:
-                return null;
-        }
+//        switch (position) {
+//            case 0:
+//                return context.getString(R.string.tab_home);
+//            case 1:
+//                return context.getString(R.string.tab_details);
+//            case 2:
+//                return context.getString(R.string.tab_camera);
+//            default:
+//                return null;
+//        }
+        return null;
     }
 }
