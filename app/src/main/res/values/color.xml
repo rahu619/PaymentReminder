@@ -20,6 +20,7 @@
     <item name="item18" type="color">#ccff66</item>
     <item name="item19" type="color">#77b300</item>
     <item name="item20" type="color">#669900</item>
+    <item name="black" type="color">#000000</item>
 
     <integer-array name="tablecolors">
         <item>@color/item1</item>
