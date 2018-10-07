@@ -1,4 +1,4 @@
-package com.google.android.gms.samples.vision.ocrreader;
+package com.rahul.android.payment;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;

@@ -7,7 +7,7 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
-import com.google.android.gms.samples.vision.ocrreader.R;
+import com.rahul.android.payment.R;
 
 
 public class Notify {

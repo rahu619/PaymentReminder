@@ -2,7 +2,7 @@ package Db;
 
 import android.support.annotation.Nullable;
 
-import com.google.android.gms.samples.vision.ocrreader.SingleSeries;
+import com.rahul.android.payment.SingleSeries;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.google.android.gms.samples.vision.ocrreader.SingleSeries;
+import com.rahul.android.payment.SingleSeries;
 
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
