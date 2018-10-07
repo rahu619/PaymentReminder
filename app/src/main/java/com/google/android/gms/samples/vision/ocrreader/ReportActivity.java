@@ -49,6 +49,16 @@ public class ReportActivity extends Fragment {
         LoadData(_reminder.GetReport());
     }
 
+    @Override
+    public void setUserVisibleHint(boolean visible)
+    {
+        super.setUserVisibleHint(visible);
+        if (visible && isResumed())
+        {
+            onResume();
+        }
+    }
+
     private void LoadData(List<SingleSeries> _data){
 
        List<PieEntry> _pieEntries= _data.stream().map(f-> new PieEntry(f.get_data(),f.get_label())).collect(Collectors.toList());

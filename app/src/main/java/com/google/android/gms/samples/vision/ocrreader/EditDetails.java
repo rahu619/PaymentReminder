@@ -34,6 +34,7 @@ public class EditDetails extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_details);
 
+        _submit=findViewById(R.id.submit);
         _billdate = findViewById(R.id.billdate);
         _billTitle = findViewById(R.id.billtitle);
         _billcontent=findViewById(R.id.billcontent);
@@ -89,7 +90,19 @@ public class EditDetails extends Activity {
     public void Delete(View v){
         BillContent _content=new BillContent(_billID);
         _reminder =new Reminder(getApplicationContext(),_content);
-        _reminder.DeleteReminder();
+        boolean _status = _reminder.DeleteReminder();
+
+        if(_status){
+            _billamount.setText("");
+            _billcontent.setText("");
+            _billdate.setText("");
+            _billTitle.setText("");
+            _billpaid.setChecked(false);
+            _submit.setClickable(false);
+
+            Toast.makeText(this,"Deleted!",Toast.LENGTH_LONG).show();
+        }
+
     }
 
 }

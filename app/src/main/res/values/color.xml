@@ -22,21 +22,28 @@
     <item name="item20" type="color">#669900</item>
     <item name="black" type="color">#000000</item>
 
-    <integer-array name="tablecolors">
+    <item name="red1" type="color">#7a2009</item>
+    <item name="red2" type="color">#8e2004</item>
+    <item name="red3" type="color">#8c3d2a</item>
+    <item name="red4" type="color">#9e2204</item>
+    <item name="red5" type="color">#7a2612</item>
+
+    <integer-array name="paidcolors">
         <item>@color/item1</item>
-        <item>@color/item2</item>
-        <item>@color/item3</item>
-        <item>@color/item7</item>
         <item>@color/item8</item>
-        <item>@color/item9</item>
-        <item>@color/item10</item>
-        <item>@color/item12</item>
-        <item>@color/item13</item>
         <item>@color/item15</item>
         <item>@color/item16</item>
-        <item>@color/item17</item>
         <item>@color/item19</item>
         <item>@color/item20</item>
     </integer-array>
+
+    <integer-array name="duecolors">
+        <item>@color/red1</item>
+        <item>@color/red2</item>
+        <item>@color/red3</item>
+        <item>@color/red4</item>
+        <item>@color/red5</item>
+    </integer-array>
+
 
 </resources>

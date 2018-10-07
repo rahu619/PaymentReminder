@@ -112,7 +112,8 @@ public class HomeActivity extends Fragment {
             }
         });
 
-        int[] _randomColors = getResources().getIntArray(R.array.tablecolors);
+        int _array= billPaid==1?R.array.paidcolors:R.array.duecolors;
+        int[] _randomColors = getResources().getIntArray(_array);
         int _rowColor = _randomColors[new Random().nextInt(_randomColors.length)];
 
         tableRow.setBackgroundColor(_rowColor);

@@ -120,10 +120,10 @@ public class DbHandler extends SQLiteOpenHelper {
         query += "SELECT %s,";
         query +="sum(case when %s=0 then 1 else 0 end) DueCount,";
         query +="sum(case when %s=1 then 1 else 0 end) PaidCount";
-        query +=" FROM %s GROUP BY %s";
+        query +=" FROM %s ";
 
         SQLiteDatabase db = getWritableDatabase();
-        final Cursor c = db.rawQuery(String.format(query,COLUMN_ID,COLUMN_PAID,COLUMN_PAID,TABLE_REMINDER,COLUMN_ID), null);
+        final Cursor c = db.rawQuery(String.format(query,COLUMN_ID,COLUMN_PAID,COLUMN_PAID,TABLE_REMINDER), null);
 
         if(c!=null){
             try{
