@@ -255,4 +255,8 @@ public class DetailsActivity extends Fragment implements DatePickerDialog.OnDate
                 dateSelect(v);
         }
     }
+
+    public void setBillContent(String billContent) {
+        _billcontent.setText(billContent);
+    }
 }

@@ -9,25 +9,34 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private Context context;
 
-    public ViewPagerAdapter(Context context, FragmentManager fm) {
+    private DetailsActivity detailsActivity;
+    private HomeActivity homeActivity;
+    private ReportActivity reportActivity;
+    private MainActivity mainActivity;
+
+    public ViewPagerAdapter(Context context, FragmentManager fm, HomeActivity homeActivity, MainActivity mainActivity, ReportActivity reportActivity, DetailsActivity detailsActivity) {
         super(fm);
         this.context = context;
+        this.detailsActivity = detailsActivity;
+        this.homeActivity = homeActivity;
+        this.reportActivity = reportActivity;
+        this.mainActivity = mainActivity;
     }
 
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
-            return new HomeActivity();
+            return homeActivity;
         }
         else if (position == 1){
-            return new ReportActivity();
+            return reportActivity;
         }
         else if(position == 2)
         {
-            return new DetailsActivity();
+            return detailsActivity;
         }
         else {
-            return new MainActivity();
+            return mainActivity;
         }
     }
 
