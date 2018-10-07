@@ -106,8 +106,7 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
     public List<BillContent> getReminders(){
-
-        String query = String.format("SELECT * FROM %s ",TABLE_REMINDER);
+        String query = String.format("SELECT * FROM %s order by %s",TABLE_REMINDER,COLUMN_DATE);
         return executeQuery(query);
 
     }
