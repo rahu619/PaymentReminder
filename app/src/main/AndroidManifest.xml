@@ -39,7 +39,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
 
         <receiver android:name="Notification.AlarmBroadcastReceiver">
             <intent-filter>
@@ -57,7 +57,12 @@
         <activity android:name=".ReportActivity" />
         <activity
             android:name=".EditDetails"
-            android:label="@string/title_activity_edit_details"></activity>
+            android:label="@string/title_activity_edit_details" />
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>
