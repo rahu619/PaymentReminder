@@ -46,7 +46,7 @@ public class HomeActivity extends Fragment {
     private static int SCREEN_WIDTH;
     TableLayout billsTable;
     IReminder _reminder;
-
+    Spinner spin;
     String[] _categories={"All","Paid","Due"};
 
     public HomeActivity() {
@@ -67,32 +67,28 @@ public class HomeActivity extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         billsTable = getView().findViewById(R.id.billsTable);
-
+        spin = getView().findViewById(R.id.billCategory);
         SpinnerInitialize();
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
     }
 
+
     private void SpinnerInitialize(){
-        Spinner spin = getView().findViewById(R.id.billCategory);
-        ArrayAdapter aa = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_dropdown_item,_categories);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(aa);
+            ArrayAdapter aa = new ArrayAdapter(getActivity(), R.layout.spinner_option, _categories);
+            aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spin.setAdapter(aa);
+            spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    selectReminders(_categories[position]);
+                }
 
-        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
-                ((TextView) parent.getChildAt(0)).setTextSize(20);
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
 
-                selectReminders(_categories[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+                }
+            });
 
     }
 
