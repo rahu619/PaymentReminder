@@ -3,8 +3,8 @@ package Db;
 import android.content.Context;
 import android.telecom.Call;
 
-import com.google.android.gms.samples.vision.ocrreader.DetailsActivity;
-import com.google.android.gms.samples.vision.ocrreader.SingleSeries;
+import com.rahul.android.payment.DetailsActivity;
+import com.rahul.android.payment.SingleSeries;
 
 import java.time.LocalDateTime;
 import java.util.List;

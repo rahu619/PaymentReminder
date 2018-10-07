@@ -2,8 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="@color/NormalActivityBg"
     tools:context="com.google.android.gms.samples.vision.ocrreader.MainActivity">
+=======
+    android:background="@color/black"
+    tools:context="com.rahul.android.payment.MainActivity">
+>>>>>>> 1fe2520d1977011a80e5aae43813e253b6021e2c
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,7 +68,7 @@
 
     <!--<fragment-->
         <!--android:id="@+id/toolbar_fragment"-->
-        <!--android:name="com.google.android.gms.samples.vision.ocrreader.ToolbarFragment"-->
+        <!--android:name="com.rahul.android.payment.ToolbarFragment"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_alignParentBottom="true"/>-->

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.gms.samples.vision.ocrreader;
+package com.rahul.android.payment;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
