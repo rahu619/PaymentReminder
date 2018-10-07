@@ -39,9 +39,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:windowSoftInputMode="stateHidden">
-
-        </activity>
+            android:windowSoftInputMode="stateHidden"></activity>
 
         <receiver android:name="Notification.AlarmBroadcastReceiver">
             <intent-filter>
@@ -56,7 +54,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReportActivity"></activity>
+        <activity android:name=".ReportActivity" />
+        <activity
+            android:name=".EditDetails"
+            android:label="@string/title_activity_edit_details"></activity>
     </application>
 
 </manifest>

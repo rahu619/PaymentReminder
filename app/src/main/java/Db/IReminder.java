@@ -9,7 +9,11 @@ import java.util.List;
 
 public interface IReminder{
 
-    boolean AddReminder();
+
     List<BillContent> GetReminders();
     List<SingleSeries> GetReport();
+
+    boolean AddReminder();
+    boolean UpdateReminder();
+    boolean DeleteReminder();
 }

@@ -30,11 +30,6 @@ public class ReportActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
-
-        _reminder =new Reminder(getContext(),null);
-        LoadData(_reminder.GetReport());
-
         View rootView = inflater.inflate(R.layout.activity_report, container, false);
         return rootView;
 
@@ -44,8 +39,15 @@ public class ReportActivity extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         super.onViewCreated(view, savedInstanceState);
+        _reminder =new Reminder(getContext(),null);
+
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        LoadData(_reminder.GetReport());
+    }
 
     private void LoadData(List<SingleSeries> _data){
 
@@ -53,9 +55,9 @@ public class ReportActivity extends Fragment {
 
         //format chart
         PieDataSet pds=new PieDataSet(_pieEntries,"Comparison");
-        pds.setColors(ColorTemplate.createColors(new int[]{Color.parseColor("#262693"),
-                Color.parseColor("#101049"),
-                Color.parseColor("#332f99")
+        pds.setColors(ColorTemplate.createColors(new int[]{
+                Color.parseColor("#75d34a"),
+                Color.parseColor("#b24a35")
         }));
 
         pds.setValueTextSize(25f);
@@ -66,23 +68,10 @@ public class ReportActivity extends Fragment {
         pds.setSelectionShift(15f);
         pds.setYValuePosition(PieDataSet.ValuePosition.INSIDE_SLICE);
 
-        //  timings.addSplit("pieData");
-
-        if (ReportActivity.data != null)
-            ReportActivity.data.clearValues();
-
-         ReportActivity.data = new PieData(pds);
-
-
-//       }).start();
-
-
-       PieChartComparison(ReportActivity.data);
+       PieChartComparison(new PieData(pds));
     }
 
     private void PieChartComparison(PieData data){
-
-        try {
 
             PieChart _pc = getView().findViewById(R.id.pcCompare);
             _pc.invalidate();
@@ -101,10 +90,7 @@ public class ReportActivity extends Fragment {
             _pc.animateY(2000); //animate chart on displaying
             _pc.invalidate();
 
-        }
-        catch (Exception e) {
-            //print the error here
-        }
+
 
     }
 }

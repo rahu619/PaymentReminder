@@ -18,9 +18,8 @@ public class Notify {
 
  }
 
- public void Set(String body){
+ public void Set(String title,String body){
 
-     String title="Bill Reminder";
      NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
      int notificationId = 1;
@@ -34,7 +33,7 @@ public class Notify {
      }
 
      NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, channelId)
-             .setSmallIcon(R.drawable.ninja)
+             .setSmallIcon(R.drawable.billremind)
              .setContentTitle(title)
              .setContentText(body);
 

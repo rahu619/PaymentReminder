@@ -15,8 +15,10 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (ACTION_ALARM.equals(intent.getAction())) {
-            //Toast.makeText(context, ACTION_ALARM, Toast.LENGTH_SHORT).show();
-            new Notify(context).Set("Test");
+            String title = intent.getStringExtra("Title");
+            String content = intent.getStringExtra("Content");
+            int amt = intent.getIntExtra("Amount",0);
+            new Notify(context).Set(title,content);
         }
     }
 

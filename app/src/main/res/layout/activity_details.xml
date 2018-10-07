@@ -171,19 +171,7 @@
             android:backgroundTint="@color/PrimaryBg"
             />
     </LinearLayout>
-    <!--<RelativeLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true">-->
-    <!--<include layout="@layout/appbar"/>-->
 
-    <!--</RelativeLayout>-->
-    <!--<fragment-->
-        <!--android:id="@+id/toolbar_fragment"-->
-        <!--android:name="com.google.android.gms.samples.vision.ocrreader.ToolbarFragment"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true" />-->
 
 </RelativeLayout>
 </ScrollView>

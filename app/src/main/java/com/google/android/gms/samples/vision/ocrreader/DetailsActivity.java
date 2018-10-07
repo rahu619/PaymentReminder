@@ -51,20 +51,8 @@ public class DetailsActivity extends Fragment implements DatePickerDialog.OnDate
     DbHandler db;
 
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//
-//         initialize();
-//        _date.setInputType(InputType.TYPE_NULL); //for preventing the soft keyboard from getting launched
-//
-//         db = new DbHandler(this, null);
-//
-//    }
-
     public DetailsActivity() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -89,9 +77,14 @@ public class DetailsActivity extends Fragment implements DatePickerDialog.OnDate
         initialize();
         setOnClickListeners();
         _date.setInputType(InputType.TYPE_NULL); //for preventing the soft keyboard from getting launched
-
         db = new DbHandler(getContext(), null);
     }
+
+
+    public void onViewStateRestored(Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+    }
+
 
     private void initialize(){
         _date = getView().findViewById(R.id.billdate);
@@ -206,8 +199,12 @@ public class DetailsActivity extends Fragment implements DatePickerDialog.OnDate
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d H:m");
 
+            int _billamt=Integer.valueOf(_billamount.getText().toString());
+            String _billctnt=_billcontent.getText().toString();
+            String _billtitle=_billTitle.getText().toString();
+
             LocalDateTime _billdate=LocalDateTime.parse(_date.getText().toString(),formatter);
-            BillContent _content=new BillContent(0, _billdate,null,_billcontent.getText().toString(), Integer.valueOf(_billamount.getText().toString()),0);
+            BillContent _content=new BillContent(0, _billdate,_billtitle,_billctnt,_billamt ,0,0);
             IReminder _reminder= new Reminder(getContext().getApplicationContext(),_content);
 
 
@@ -218,7 +215,7 @@ public class DetailsActivity extends Fragment implements DatePickerDialog.OnDate
 
                 Calendar c = Calendar.getInstance();
                 c.add(Calendar.MINUTE, (int)ChronoUnit.MINUTES.between(LocalDateTime.now(),_billdate));
-                setAlarm(c.getTimeInMillis());
+                setAlarm(_billtitle,_billamt,_billctnt,c.getTimeInMillis());
                 _msg="Saved";
             }
             else
@@ -230,9 +227,12 @@ public class DetailsActivity extends Fragment implements DatePickerDialog.OnDate
             Toast.makeText(getActivity(),_msg,Toast.LENGTH_SHORT).show();
     }
 
-    public void setAlarm(long time) {
+    public void setAlarm(String title,int amount,String content,long time) {
 
         Intent intentToFire = new Intent(getContext().getApplicationContext(), AlarmBroadcastReceiver.class);
+        intentToFire.putExtra("Title",title);
+        intentToFire.putExtra("Amount",amount);
+        intentToFire.putExtra("Content",content);
         intentToFire.setAction(AlarmBroadcastReceiver.ACTION_ALARM);
 
         PendingIntent alarmIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(),0, intentToFire, 0);

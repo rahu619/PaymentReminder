@@ -19,7 +19,7 @@ public class TabActivity extends AppCompatActivity {
 
     private int[] tabIcons = {
             R.drawable.ic_home_black_40dp_70,
-            //R.drawable.ic_details_black_24dp,
+            R.drawable.ic_insert_chart_black_40,
             R.drawable.ic_add_circle_black_40dp_70,
             R.drawable.ic_photo_camera_black_40dp_70
     };
@@ -41,7 +41,7 @@ public class TabActivity extends AppCompatActivity {
 
     private void setupTabIcons() {
 
-        for(int i = 0;i < 3;i++){
+        for(int i = 0;i < 4;i++){
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(tabIcons[i]);
             tabLayout.getTabAt(i).setCustomView(imageView);

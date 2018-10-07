@@ -18,9 +18,19 @@ import java.util.List;
 
 public class DbHandler extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "billpayment.db";
     private static final String TABLE_REMINDER = "REMINDER";
+
+    private static final String COLUMN_ID = "BILL_ID";
+    private static final String COLUMN_DATE = "BILL_DATE";
+    private static final String COLUMN_TITLE = "BILL_TITLE";
+    private static final String COLUMN_AMOUNT = "BILL_AMOUNT";
+    private static final String COLUMN_CONTENT = "BILL_CONTENT";
+    private static final String COLUMN_DISMISSED = "BILL_IS_DISMISSED";
+    private static final String COLUMN_PAID = "BILL_IS_PAID";
+    private static final String COLUMN_CREATED = "BILL_CREATED_ON";
+
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
@@ -32,10 +42,23 @@ public class DbHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         StringBuilder _query = new StringBuilder();
 
-        _query.append("CREATE TABLE " + TABLE_REMINDER);
-        _query.append("(ID INTEGER PRIMARY KEY AUTOINCREMENT,BILL_DATE DATETIME,BILL_TITLE TEXT NULL,");
-        _query.append("BILL_AMOUNT INT,BILL_CONTENT TEXT NULL,BILL_IS_DISMISSED INTEGER,BILL_CREATED_ON DATETIME NULL);");
-         db.execSQL(_query.toString());
+        _query.append("CREATE TABLE %s ");
+        _query.append("(%s INTEGER PRIMARY KEY AUTOINCREMENT,");
+        _query.append("%s DATETIME,");
+        _query.append("%s TEXT NULL,");
+        _query.append("%s INT,");
+        _query.append("%s TEXT NULL,");
+        _query.append("%s INTEGER DEFAULT 0,");
+        _query.append("%s INTEGER DEFAULT 0,");
+        _query.append("%s DATETIME NULL);");
+
+        String _createQuery= String.format(_query.toString(),
+                                            TABLE_REMINDER,COLUMN_ID,
+                                            COLUMN_DATE,COLUMN_TITLE,COLUMN_AMOUNT,
+                                            COLUMN_CONTENT,COLUMN_DISMISSED,COLUMN_PAID,
+                                            COLUMN_CREATED);
+
+         db.execSQL(_createQuery);
 
     }
 
@@ -45,17 +68,24 @@ public class DbHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long addReminder(BillContent content){
-        SQLiteDatabase db = this.getWritableDatabase();
+
+    private ContentValues getContentValues(BillContent content){
 
         ContentValues values = new ContentValues();
-        values.put("BILL_DATE",content.datetime.toString().replace("T", " "));
-        values.put("BILL_TITLE",content.title);
-        values.put("BILL_CONTENT",content.content);
-        values.put("BILL_AMOUNT",content.amount);
-        values.put("BILL_IS_DISMISSED",content.isread);
-        values.put("BILL_CREATED_ON",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        values.put(COLUMN_DATE,content.datetime.toString().replace("T", " "));
+        values.put(COLUMN_TITLE,content.title);
+        values.put(COLUMN_CONTENT,content.content);
+        values.put(COLUMN_AMOUNT,content.amount);
+        values.put(COLUMN_PAID,content.ispaid);
+        values.put(COLUMN_DISMISSED,content.isread);
+        values.put(COLUMN_CREATED,new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 
+        return values;
+    }
+
+    public long addReminder(BillContent content){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values=getContentValues(content);
 
         long count = db.insert(TABLE_REMINDER, null, values);
         db.close();
@@ -63,6 +93,17 @@ public class DbHandler extends SQLiteOpenHelper {
         return count;
     }
 
+    public int updateReminder(BillContent content){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values=getContentValues(content);
+
+        return db.update(TABLE_REMINDER,values,String.format("%s = ?",COLUMN_ID),new String[]{String.valueOf(content.id)});
+    }
+
+    public int deleteReminder(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_REMINDER,String.format("%s = ?",COLUMN_ID),new String[]{String.valueOf(id)});
+    }
 
     public List<BillContent> getReminders(){
 
@@ -76,24 +117,32 @@ public class DbHandler extends SQLiteOpenHelper {
         List<SingleSeries> _singleSeries=new ArrayList<>();
 
         String query="";
-        query += "SELECT ID, count(*) as Total,";
-        query +="sum(case when BILL_IS_DISMISSED=0 then 1 else 0 end) DueCount,";
-        query +="sum(case when BILL_IS_DISMISSED=1 then 1 else 0 end) PaidCount";
-        query +=" FROM %s GROUP BY ID";
+        query += "SELECT %s,";
+        query +="sum(case when %s=0 then 1 else 0 end) DueCount,";
+        query +="sum(case when %s=1 then 1 else 0 end) PaidCount";
+        query +=" FROM %s GROUP BY %s";
 
         SQLiteDatabase db = getWritableDatabase();
-        Cursor c = db.rawQuery(String.format(query,TABLE_REMINDER), null);
-        c.moveToFirst();
+        final Cursor c = db.rawQuery(String.format(query,COLUMN_ID,COLUMN_PAID,COLUMN_PAID,TABLE_REMINDER,COLUMN_ID), null);
 
-        while (!c.isAfterLast()) {
-            int total=c.getInt(c.getColumnIndex("Total"));
-            int dueCount=c.getInt(c.getColumnIndex("DueCount"));
-            int paidCount=c.getInt(c.getColumnIndex("PaidCount"));
+        if(c!=null){
+            try{
+                if(c.moveToFirst()){
+                    //int total=c.getInt(c.getColumnIndex("Total"));
+                    int dueCount=c.getInt(c.getColumnIndex("DueCount"));
+                    int paidCount=c.getInt(c.getColumnIndex("PaidCount"));
 
-            _singleSeries.add(new SingleSeries("Total",total));
-            _singleSeries.add(new SingleSeries("Paid",paidCount));
-            _singleSeries.add(new SingleSeries("Due",dueCount));
+                   // _singleSeries.add(new SingleSeries("Total",total));
+                    _singleSeries.add(new SingleSeries("Paid",paidCount));
+                    _singleSeries.add(new SingleSeries("Due",dueCount));
+                }
+            }
+            finally {
+                c.close();
+
+            }
         }
+        db.close();
 
         return _singleSeries;
     }
@@ -106,18 +155,19 @@ public class DbHandler extends SQLiteOpenHelper {
         c.moveToFirst();
 
         while (!c.isAfterLast()) {
-            if (c.getString(c.getColumnIndex("ID")) != null) {
-                int _id = c.getInt(c.getColumnIndex("ID"));
-                String _datetime = c.getString(c.getColumnIndex("BILL_DATE"));
-                String _title = c.getString(c.getColumnIndex("BILL_TITLE"));
-                String _content = c.getString(c.getColumnIndex("BILL_CONTENT"));
-                int _amount = c.getInt(c.getColumnIndex("BILL_AMOUNT"));
-                int _isread = c.getInt(c.getColumnIndex("BILL_IS_DISMISSED"));
-                String _createdon = c.getString(c.getColumnIndex("BILL_CREATED_ON"));
+            if (c.getString(c.getColumnIndex(COLUMN_ID)) != null) {
+                int _id = c.getInt(c.getColumnIndex(COLUMN_ID));
+                String _datetime = c.getString(c.getColumnIndex(COLUMN_DATE));
+                String _title = c.getString(c.getColumnIndex(COLUMN_TITLE));
+                String _content = c.getString(c.getColumnIndex(COLUMN_CONTENT));
+                int _amount = c.getInt(c.getColumnIndex(COLUMN_AMOUNT));
+                int _isread = c.getInt(c.getColumnIndex(COLUMN_DISMISSED));
+                int _ispaid = c.getInt(c.getColumnIndex(COLUMN_PAID));
+                String _createdon = c.getString(c.getColumnIndex(COLUMN_CREATED));
 
                 LocalDateTime _formatedDate=LocalDateTime.parse(_datetime, formatter);
 
-                _returnList.add(new BillContent(_id,_formatedDate,_title,_content,_amount,_isread));
+                _returnList.add(new BillContent(_id,_formatedDate,_title,_content,_amount,_isread,_ispaid));
 
             }
             c.moveToNext();

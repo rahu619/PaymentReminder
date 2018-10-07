@@ -13,6 +13,8 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +24,7 @@ import android.view.WindowManager;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -40,69 +43,17 @@ public class HomeActivity extends Fragment {
     private static int SCREEN_WIDTH;
     TableLayout billsTable;
     IReminder _reminder;
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        _reminder =new Reminder(getApplicationContext(),null);
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_home);
-//        getScreenDimension();
-//        billsTable = findViewById(R.id.billsTable);
-//
-////        dummyData();
-//
-//        selectReminders();
-//    }
-
-
-//    void dummyData(){
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//        addBillInfoRowToBillTable("Bill 1");
-//        addBillInfoRowToBillTable("Bill 2");
-//        addBillInfoRowToBillTable("Bill 3");
-//
-//    }
 
     public HomeActivity() {
-        // Required empty public constructor
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _reminder =new Reminder(getContext().getApplicationContext(),null);
+
         super.onCreate(savedInstanceState);
         getScreenDimension();
-//        dummyData();
-
-//        selectReminders();
         View rootView = inflater.inflate(R.layout.activity_home, container, false);
         return rootView;
     }
@@ -110,55 +61,64 @@ public class HomeActivity extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        billsTable = getView().findViewById(R.id.billsTable);
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
         selectReminders();
+
     }
 
     void selectReminders(){
+       billsTable.removeAllViews();
        List<BillContent> _content = _reminder.GetReminders();
+
        for(BillContent _cntnt: _content){
-           addBillInfoRowToBillTable(_cntnt.datetime,_cntnt.content);
+           addBillInfoRowToBillTable(_cntnt.id,_cntnt.datetime,_cntnt.title,_cntnt.content,_cntnt.amount,_cntnt.ispaid);
         }
     }
 
 
-    private void addBillInfoRowToBillTable(LocalDateTime billDate, String billInfo){
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd-MMM");
+
+    private void addBillInfoRowToBillTable(int billID,LocalDateTime billDate,String billTitle,String billInfo,int billAmount,int billPaid){
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM, HH:mm");
 
         TableRow tableRow= new TableRow(getContext());
-        TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT);
-        tableRow.setLayoutParams(lp);
 
-        TextView _billDate=new TextView(getContext());
-        _billDate.setGravity(Gravity.LEFT);
-        _billDate.setPadding(0,0,50,0);
+        tableRow = (TableRow)LayoutInflater.from(getContext()).inflate(R.layout.table_row, null);
+        ((TextView)tableRow.findViewById(R.id.title)).setText(billInfo);
+        ((TextView)tableRow.findViewById(R.id.date)).setText(billDate.format(formatter));
+        ((TextView)tableRow.findViewById(R.id.amount)).setText(String.valueOf(billAmount)+" NZD");
 
-        TextView _billContent = new TextView(getContext());
+        tableRow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getContext(), EditDetails.class);
 
-        _billDate.setText(billDate.format(formatter));
-        _billDate.setTextColor(Color.BLACK);
-
-        _billContent.setText(billInfo);
-        _billContent.setGravity(Gravity.RIGHT);
-
-        _billContent.setTypeface(null, Typeface.BOLD);
-        _billContent.setTextColor(Color.WHITE);
-        tableRow.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
-
-        tableRow.addView(_billDate);
-        tableRow.addView(_billContent);
-        tableRow.setMinimumHeight(50);
-        tableRow.setPadding(20,20,20,20);
+                in.putExtra("BILL_ID",billID);
+                in.putExtra("BILL_DATE", String.valueOf(billDate));
+                in.putExtra("BILL_TITLE", billTitle);
+                in.putExtra("BILL_CONTENT",billInfo);
+                in.putExtra("BILL_AMOUNT", String.valueOf(billAmount));
+                in.putExtra("BILL_PAID",billPaid>0);
+                startActivity(in);
+            }
+        });
 
         int[] _randomColors = getResources().getIntArray(R.array.tablecolors);
         int _rowColor = _randomColors[new Random().nextInt(_randomColors.length)];
 
-//        Random rnd = new Random();
-//        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         tableRow.setBackgroundColor(_rowColor);
-        billsTable = getView().findViewById(R.id.billsTable);
+        tableRow.setPadding(1,0,1,2);
+
+
         billsTable.addView(tableRow);
     }
 

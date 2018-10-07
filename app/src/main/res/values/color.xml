@@ -26,21 +26,15 @@
         <item>@color/item1</item>
         <item>@color/item2</item>
         <item>@color/item3</item>
-        <item>@color/item4</item>
-        <item>@color/item5</item>
-        <item>@color/item6</item>
         <item>@color/item7</item>
         <item>@color/item8</item>
         <item>@color/item9</item>
         <item>@color/item10</item>
-        <item>@color/item11</item>
         <item>@color/item12</item>
         <item>@color/item13</item>
-        <item>@color/item14</item>
         <item>@color/item15</item>
         <item>@color/item16</item>
         <item>@color/item17</item>
-        <item>@color/item18</item>
         <item>@color/item19</item>
         <item>@color/item20</item>
     </integer-array>
