@@ -17,6 +17,11 @@ public class TabActivity extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
 
+    DetailsActivity detailsActivity;
+    HomeActivity homeActivity;
+    ReportActivity reportActivity;
+    MainActivity mainActivity;
+
     private int[] tabIcons = {
             R.drawable.ic_home_black_40dp_70,
             R.drawable.ic_insert_chart_black_40,
@@ -32,7 +37,13 @@ public class TabActivity extends AppCompatActivity {
         Fragment fragmentOne = new Fragment();
         this.tabLayout = findViewById(R.id.tabLayout);
         this.viewPager = findViewById(R.id.viewPager);
-        viewPagerAdapter = new ViewPagerAdapter(this, getSupportFragmentManager());
+
+        homeActivity = new HomeActivity();
+        reportActivity = new ReportActivity();
+        detailsActivity = new DetailsActivity();
+        mainActivity = new MainActivity();
+        mainActivity.detailsActivity = detailsActivity;
+        viewPagerAdapter = new ViewPagerAdapter(this, getSupportFragmentManager(), homeActivity, mainActivity, reportActivity, detailsActivity);
         viewPager.setAdapter(viewPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);

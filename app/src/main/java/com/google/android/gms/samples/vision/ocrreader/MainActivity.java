@@ -56,6 +56,7 @@ public class MainActivity extends Fragment implements View.OnClickListener,Toolb
 
     private static final int RC_OCR_CAPTURE = 9003;
     private static final String TAG = "MainActivity";
+    public DetailsActivity detailsActivity;
 
     public MainActivity() {
 
@@ -114,7 +115,7 @@ public class MainActivity extends Fragment implements View.OnClickListener,Toolb
 
                     TabLayout tabhost = (TabLayout) getActivity().findViewById(R.id.tabLayout);
                     tabhost.getTabAt(2).select();
-
+                    detailsActivity.setBillContent(text);
 
 
                 } else {
