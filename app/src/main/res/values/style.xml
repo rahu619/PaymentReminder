@@ -18,6 +18,7 @@
  <color name="TextStyleHeader">#fff</color>
  <color name="TextStyle1">#fafafa</color>
  <color name="NormalActivityBg">#f7f4f4</color>
+ <color name="HintColor">#7a7171</color>
 
 
 

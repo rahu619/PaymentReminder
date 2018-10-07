@@ -23,8 +23,8 @@ public class Reminder implements IReminder {
 
     }
 
-    public List<BillContent> GetReminders(){
-        return _DB.getReminders();
+    public List<BillContent> GetReminders(String condition){
+        return _DB.getReminders(condition);
     }
 
 

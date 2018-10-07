@@ -10,7 +10,7 @@ import java.util.List;
 public interface IReminder{
 
 
-    List<BillContent> GetReminders();
+    List<BillContent> GetReminders(String condition);
     List<SingleSeries> GetReport();
 
     boolean AddReminder();

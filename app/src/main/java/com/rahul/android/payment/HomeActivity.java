@@ -21,6 +21,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -44,6 +47,8 @@ public class HomeActivity extends Fragment {
     TableLayout billsTable;
     IReminder _reminder;
 
+    String[] _categories={"All","Paid","Due"};
+
     public HomeActivity() {
 
     }
@@ -62,7 +67,32 @@ public class HomeActivity extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         billsTable = getView().findViewById(R.id.billsTable);
+
+        SpinnerInitialize();
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+    }
+
+    private void SpinnerInitialize(){
+        Spinner spin = getView().findViewById(R.id.billCategory);
+        ArrayAdapter aa = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_dropdown_item,_categories);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(aa);
+
+        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
+                ((TextView) parent.getChildAt(0)).setTextSize(20);
+
+                selectReminders(_categories[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 
@@ -70,13 +100,13 @@ public class HomeActivity extends Fragment {
     public void onResume()
     {
         super.onResume();
-        selectReminders();
+        selectReminders("");
 
     }
 
-    void selectReminders(){
+    void selectReminders(String value){
        billsTable.removeAllViews();
-       List<BillContent> _content = _reminder.GetReminders();
+       List<BillContent> _content = _reminder.GetReminders(value);
 
        for(BillContent _cntnt: _content){
            addBillInfoRowToBillTable(_cntnt.id,_cntnt.datetime,_cntnt.title,_cntnt.content,_cntnt.amount,_cntnt.ispaid);

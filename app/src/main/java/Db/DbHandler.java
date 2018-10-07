@@ -105,9 +105,18 @@ public class DbHandler extends SQLiteOpenHelper {
         return db.delete(TABLE_REMINDER,String.format("%s = ?",COLUMN_ID),new String[]{String.valueOf(id)});
     }
 
-    public List<BillContent> getReminders(){
-        String query = String.format("SELECT * FROM %s order by %s",TABLE_REMINDER,COLUMN_DATE);
-        return executeQuery(query);
+    public List<BillContent> getReminders(String condition){
+        StringBuilder _query=new StringBuilder();
+        _query.append(String.format("SELECT * FROM %s where %s =",TABLE_REMINDER,COLUMN_PAID));
+
+        switch (condition){
+            case "Due": _query.append("0"); break;
+            case "Paid": _query.append("1"); break;
+            default:_query.append(COLUMN_PAID);break;
+        }
+
+        _query.append(String.format(" order by %s",COLUMN_DATE));
+        return executeQuery(_query.toString());
 
     }
 

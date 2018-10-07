@@ -64,19 +64,43 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/spinnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/titlelayout">
+
+        <Spinner
+            android:id="@+id/billCategory"
+            android:textColor="@color/black"
+            android:padding="5dip"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:fontFamily="sans-serif-medium"
+            android:clickable="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:paddingTop="2dp"/>
+
+    </LinearLayout>
+
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_marginTop="35dp"
+        android:layout_below="@+id/spinnerLayout"
+        android:layout_marginTop="1dp"
         android:scrollbars="vertical"
-        android:layout_height="530dp">
+        android:layout_height="530dp"
+
+        >
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/billsTable"
-            android:layout_marginTop="30dp"
-            android:paddingTop="20dp"
+            android:layout_marginTop="2dp"
+            android:paddingTop="2dp"
             android:padding="4dp"
             android:showDividers="middle"
             android:stretchColumns="0"
@@ -86,13 +110,6 @@
         </TableLayout>
 
     </ScrollView>
-
-    <!--<fragment-->
-        <!--android:id="@+id/toolbar_fragment"-->
-        <!--android:name="com.rahul.android.payment.ToolbarFragment"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--/>-->
+    
 
 </RelativeLayout>

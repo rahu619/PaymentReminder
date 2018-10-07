@@ -31,7 +31,7 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_edit_details">EditDetails</string>
 
-    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_splash">Payment Reminder</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
