@@ -128,6 +128,11 @@ public class DetailsActivity extends Fragment implements DatePickerDialog.OnDate
 
     }
 
+
+    public void SetValue(String _value){
+        _billcontent.setText(_value);
+    }
+
     private void setOnClickListeners() {
         _submit.setOnClickListener(this);
         _date.setOnClickListener(this);

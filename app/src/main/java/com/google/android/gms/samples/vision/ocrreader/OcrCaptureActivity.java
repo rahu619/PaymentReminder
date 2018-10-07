@@ -105,16 +105,9 @@ public final class OcrCaptureActivity extends AppCompatActivity implements Toolb
         scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
 
-        // Here, the counter will be incremented each time, and the
-        // picture taken by camera will be stored as 1.jpg,2.jpg
-        // and likewise.
-
-
-
-
         Snackbar.make(mGraphicOverlay, "Tap here to capture. Pinch/Stretch to zoom",
                 Snackbar.LENGTH_LONG)
-                .setAction("Whole",new View.OnClickListener(){
+                .setAction("WHOLE",new View.OnClickListener(){
                 @Override
                     public void onClick(View v){
                     Snackbar mSnackbar = Snackbar.make(mGraphicOverlay, "Capturing...", Snackbar.LENGTH_SHORT);
@@ -197,19 +190,8 @@ public final class OcrCaptureActivity extends AppCompatActivity implements Toolb
         textRecognizer.setProcessor(new OcrDetectorProcessor(mGraphicOverlay));
 
         if (!textRecognizer.isOperational()) {
-            // Note: The first time that an app using a Vision API is installed on a
-            // device, GMS will download a native libraries to the device in order to do detection.
-            // Usually this completes before the app is run for the first time.  But if that
-            // download has not yet completed, then the above call will not detect any text,
-            // barcodes, or faces.
-            //
-            // isOperational() can be used to check if the required native libraries are currently
-            // available.  The detectors will automatically become operational once the library
-            // downloads complete on device.
             Log.w(TAG, "Detector dependencies are not yet available.");
 
-            // Check for low storage.  If there is low storage, the native library will not be
-            // downloaded, so detection will not become operational.
             IntentFilter lowstorageFilter = new IntentFilter(Intent.ACTION_DEVICE_STORAGE_LOW);
             boolean hasLowStorage = registerReceiver(null, lowstorageFilter) != null;
 
